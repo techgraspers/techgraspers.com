@@ -2,7 +2,8 @@ from .base import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['techgraspers.com', 'www.techgraspers.com']
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
