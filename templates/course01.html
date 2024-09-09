@@ -1,0 +1,612 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tech-Graspers | The QA learning destination</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/Logo Mark.png' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="navbar-top">
+        <nav class="navbar navbar-expand-lg navbar-light shadow sticky-top p-0">
+            <div class="collapse navbar-collapse" >
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="index.html"><img src="{% static 'img/icons/icons8-telegram-100 1.png' %}" alt=""></a>
+                    <a href="index.html" style="width: 25% !important;"><img src="{% static 'img/icons/icons8-youtube-100 2.png' %}" alt=""></a>
+                    <a href="index.html"><img src="{% static 'img/icons/icons8-instagram-100 2.png' %}" alt=""></a>
+                    <a href="index.html"><img src="{% static 'img/icons/icons8-facebook-100 2.png' %}" alt=""></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="navbar-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light shadow sticky-top p-0 py-4">
+            <a href="index.html" class="navbar d-flex align-items-center px-4 px-lg-5">
+                <img id="logo" src="{% static 'img/Logo.png' %}" alt="Tech-Graspers Logo" class="navbar-logo" style="height: 50px;">
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="../" class="nav-item nav-link active">HOME</a>
+                    <a href="../about" class="nav-item nav-link">ABOUT US</a>
+                    <a href="../courses" class="nav-item nav-link">COURSES</a>
+                    <a href="../testimonial" class="nav-item nav-link">TESTIMONIALS</a>
+                </div>
+                <a href="javascript:void(0)" class="btn py-2 px-lg-3 d-none d-lg-block ghost-btn" onclick="makeCall()">CALL US<i class="fa fa-phone ms-3"></i></a>
+            </div>
+        </nav>
+    </div> 
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid py-5 page-header position-relative">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        ">
+            <source src="{% static 'video/courses-video.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="container py-5 position-relative" style="z-index: 1;">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">IT Career - Reboot Program</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Personalized one-on-one counseling for tailored software testing training, focused on experienced IT professionals.</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Courses Start -->
+    <div class="container-course">
+        <div class="main-content-course">
+            <div class="course-details-course">
+                <!-- Course Details and Curriculum -->
+                <section class="course-curriculum-course">
+                    <h2>What you'll learn</h2>
+                    <ul>
+                        <li>Introduction to personalized one-on-one counseling</li>
+                        <li>Techniques for assessing technical abilities and skill sets</li>
+                        <li>Strategies for matching training with IQ and learning capacity</li>
+                        <li>Effective methods for career rejuvenation in software testing</li>
+                        <li>Advanced career development for experienced IT professionals</li>
+                    </ul>
+                    <div class="course-description-course">
+                        <p>
+                            We begin with personalized one-on-one counseling sessions to thoroughly assess each
+                            candidate's technical abilities and current skill set. Based on this comprehensive evaluation, we
+                            carefully match each student with our top trainers, ensuring the instruction aligns perfectly with
+                            their IQ and learning capacity. This tailored approach guarantees that every learner receives the
+                            most effective and impactful training experience possible.
+                        </p> <br/>
+                        <p>
+                            This program allows students to rejuvenate their career journey, helping them pick up right
+                            where they left off and move forward with renewed confidence and direction. This program
+                            mostly focuses on experienced candidates in the IT field if he/she wants to start a great career
+                            in software testing.
+                        </p>
+                    </div>
+                </section>                
+    
+                <section class="course-curriculum-course">
+                    <div class="container-course">
+                        <h2>Course Curriculum</h2>
+                        <ul>
+                            <li>Module 1: Personalized One-on-One Counseling and Skill Assessment</li>
+                            <li>Module 2: Tailored Training Approaches Based on Technical Abilities</li>
+                            <li>Module 3: Matching with Top Trainers for Optimized Learning</li>
+                            <li>Module 4: Techniques for Career Rejuvenation in Software Testing</li>
+                            <li>Module 5: Advanced Training for Experienced IT Professionals</li>
+                            <li>Module 6: Career Development and Confidence Building</li>
+                        </ul>                        
+                    </div>
+                </section>
+            </div>
+    
+            <!-- Sidebar Section -->
+            <section class="sidebar-section-course">
+                <aside class="sidebar-course">
+                    <h3>Become The Expert</h3>
+                    <img src="{% static 'img/carousel-1.jpg' %}" alt="Course Image" class="sidebar-image-course mb-4">
+                    <a class="cta-course" onclick="openModal('IT Career - Reboot Program')">Enroll Now</a>
+                    <h3>Details</h3><br/>
+                    <ul>
+                        <li>Duration: <b>As per the Requirement</b></li><br/>
+                        <li>Certificate of completion</li>
+                        <li>Access on mobile and desktop</li>
+                        <li>30-day money-back guarantee</li>
+                        <li>Sessions Handled by Industry Experts</li>
+                        <li>Basic to advanced level</li>
+                        <li>Hands own learning</li>
+                        <li>Live Project Exposure</li>
+                    </ul>
+                </aside>
+            </section>
+        </div>
+    
+        <div id="enrollmentModal" class="modal" style="z-index: 100;">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                
+                <form id="enrollmentForm">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" required>
+
+                    <input type="hidden" id="courseName" name="courseName">
+
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>                        
+    <!-- Courses End -->
+
+    <!-- Top Services -->
+    <div class="course-bg container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="mb-5 text-white">Our Top Services</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-card course-item bg-light">
+                        <div class="position-relative overflow-hidden course-card-image">
+                            <img class="img-fluid" src="{% static 'img/Service-01.jpg' %}" alt="">
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0">Discover Opportunities with the Techgraspers Student Network</h3>
+                            <div class="mb-3"></div>
+                            <h6 class="mb-4">Leverage our extensive Techgraspers student community to explore and exchange
+                                exciting job opportunities. Join a vibrant network of tech professionals and unlock new
+                                career paths through valuable connections and collaborative support. Our students are spread across a wide range of companies.</h6>
+                            <div class="d-flex flex-column align-items-center mb-4">
+                                <div class="ghost-btn-course mb-4">
+                                    <a class="px-2 m-1" onclick="openModal('Connecting and Discovering Opportunities with the Techgraspers Student Network')">GET A QUOTE</a>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-card course-item bg-light">
+                        <div class="position-relative overflow-hidden course-card-image">
+                            <img class="img-fluid" src="{% static 'img/Service-02.jpg' %}" alt="">
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0">Sharpen Your Skills with Mock Interviews with Industry Professionals</h3>
+                            <div class="mb-3"></div>
+                            <h6 class="mb-4">Gain valuable insights and improve your performance by practicing mock interviews with
+                                experienced professionals in the industry. Receive real-world feedback, refine your techniques etc...
+                                That makes you build confidence to excel in your job searches across any companies. </h6>
+                            <div class="d-flex flex-column align-items-center mb-4">
+                                <div class="ghost-btn-course mb-4">
+                                    <a class="px-2 m-1" onclick="openModal('Sharpening My Skills with Mock Interviews with Industry Professionals')">GET A QUOTE</a>
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-card course-item bg-light">
+                        <div class="position-relative overflow-hidden course-card-image">
+                            <img class="img-fluid" src="{% static 'img/Service-03.jpg' %}" alt="">
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0">Enhance Your Resume and LinkedIn Profile with Expert Guidance</h3>
+                            <div class="mb-3"></div>
+                            <h6 class="mb-4">Stand out from the competition by optimizing your resume and LinkedIn profile with the help of
+                                our experienced professionals. Receive personalized advice and improvements to showcase
+                                your skills and achievements effectively, and make a lasting impression on potential employers.</h6>
+                            <div class="d-flex flex-column align-items-center mb-4">
+                                <div class="ghost-btn-course mb-4">
+                                    <a class="px-2 m-1" onclick="openModal('Enhancing My Resume and LinkedIn Profile with Expert Guidance')">GET A QUOTE</a>
+                                </div>
+                            </div>                         
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-card course-item bg-light">
+                        <div class="position-relative overflow-hidden course-card-image">
+                            <img class="img-fluid" src="{% static 'img/Service-04.jpg' %}" alt="">
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0">Dedicated Placement Assistance Program Connects You with Diverse Career
+                                Opportunities</h3>
+                            <div class="mb-3"></div>
+                            <h6 class="mb-4">Our dedicated placement assistance program is designed to provide you with a wide array of
+                                career options. Receive tailored support and explore diverse opportunities to find the perfect
+                                match for your skills and goals.</h6>
+                            <div class="d-flex flex-column align-items-center mb-4">
+                                <div class="ghost-btn-course mb-4">
+                                    <a class="px-2 m-1" onclick="openModal('Your Dedicated Placement Assistance Program Connecting Me with Diverse Career Opportunities')">GET A QUOTE</a>
+                                </div>
+                            </div>                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- YouTube Ad -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <!-- YouTube Video Placeholder -->
+                        <div class="video-container position-absolute w-100 h-100" style="border-radius: 25px; overflow: hidden;">
+                            <div id="player"></div>
+                            <button id="playButton" class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; background-color: rgba(0,0,0,0.6); padding: 20px; border-radius: 50%; border: none; cursor: pointer;">
+                                <img src="{% static 'img/icons/play.png' %}" alt="Play" style="width: 50px; height: 50px;">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="mb-4" style="color: #126366; font-weight: bold;">Welcome to Tech-Graspers</h1>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <div class="btn ghost-btn-ad" style="margin-top: 50px;">
+                        <a class="" href="#">Watch on Youtube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!-- Youtube Ad End -->
+
+    <!-- Scroll Logos -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s" style="background-color: #D2E6E4;">
+        <h1 class="logo-heading" style="color: #ffffff; font-weight: bold;">Our Students work at</h1>
+        <div class="logo-carousel">
+            <div class="logo-track">
+                {% for logo in logoScrollSection %}
+                <div class="logo-item"><img src="{{logo.logo.url}}" alt="Client"></div>
+                {% endfor %}
+                <!-- Repeat the logos within the same track for a seamless scroll -->
+                {% for logo in logoScrollSection %}
+                <div class="logo-item"><img src="{{logo.logo.url}}" alt="Client"></div>
+                {% endfor %}
+                <!-- Repeat the logos within the same track for a seamless scroll -->
+                {% for logo in logoScrollSection %}
+                <div class="logo-item"><img src="{{logo.logo.url}}" alt="Client"></div>
+                {% endfor %}
+            </div>
+        </div>                
+    </div>
+
+    <!-- FAQ -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="faq-container">
+            <h1 class="mb-4" style="color: #126366; font-weight: bold;">Frequently Asked Questions</h1>
+            {% for faq in faqsection %}
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="plus-icon">+</span>
+                    {{faq.question}}
+                </div>
+                <div class="faq-answer">
+                    {{faq.answer}}
+                </div>
+            </div>
+            {% endfor %}
+            <div class="btn-container">
+                <button class="btn-enroll btn-student"><a class="px-2 m-1" onclick="openModal('Enrolling as a Student')" style="color: #ffffff;">Enroll as a Student</a></button>
+                <button class="btn-enroll btn-mentor"><a class="px-2 m-1" onclick="openModal('Enrolling as a Mentor')" style="color: #ffffff;">Enroll as a Mentor</a></button>
+            </div> 
+            <div id="enrollmentModal" class="modal" style="z-index: 100;">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    
+                    <form id="enrollmentForm">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="phone">Phone Number</label>
+                        <input type="text" id="phone" name="phone" required>
+
+                        <input type="hidden" id="courseName" name="courseName">
+
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </div>           
+        </div>                      
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">LINKS</h4>
+                    <a class="btn btn-link" href="">ABOUT US</a>
+                    <a class="btn btn-link" href="">COURSES</a>
+                    <a class="btn btn-link" href="">TESTIMONIALS</a>
+                    <a class="btn btn-link" href="">F.A.Q</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Company</h4>
+                    <a class="btn btn-link" href="">Support 24x7</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms And Conditions</a>
+                    <a class="btn btn-link mb-4" href="">Contact Us</a>
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Tech-Graspers, Kattappana</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9865689878</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@techgraspers.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-telegram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Work With Us</h4>
+                    <a class="btn btn-link mb-4" href="">Become a Mentor</a>
+                    <h4 class="text-white mb-3">Still Confused?<br>We Are Ready To Talk</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>+91 9896596897</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9865689878</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@techgraspers.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@techgraspers.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Send your first message to us</h4>
+                    <div class="form-container">
+                        <input type="text" class="form-control border-0 w-100 py-3 ps-4 message-input" placeholder="Type your message here" style="border-radius: 10px;">
+                        <button type="button" class="btn btn-whatsapp w-100 py-2 mt-3 whatsapp-button" onclick="sendMessage()" style="color: #ffffff;">
+                            <i class="fa fa-whatsapp"></i> Send to WhatsApp
+                            <i class="fa fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">techgraspers.com</a>, All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>  
+
+    <script>
+        
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+        var player;
+        var videoStarted = false;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '100%',
+                width: '100%',
+                videoId: 'kKWwFLHsZdw', //YouTube video ID
+                playerVars: {
+                    'autoplay': 0,
+                    'mute': 1,
+                    'controls': 0,
+                    'rel': 0,
+                    'modestbranding': 1,
+                    'playsinline': 1
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+    
+        // When the video player is ready
+        function onPlayerReady(event) {
+            document.getElementById('playButton').addEventListener('click', function () {
+                if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+                    player.pauseVideo();
+                    document.getElementById('playButton').style.display = 'block';
+                } else {
+                    player.playVideo();
+                    document.getElementById('playButton').style.display = 'none';
+                }
+            });
+    
+            window.addEventListener('scroll', function () {
+                var videoSection = document.querySelector('.video-container');
+                var rect = videoSection.getBoundingClientRect();
+                var windowHeight = window.innerHeight;
+    
+                if (!videoStarted && rect.top < windowHeight && rect.bottom >= 0) {
+                    videoStarted = true;
+                    player.playVideo();
+                }
+            });
+        }
+    </script>  
+    <script>
+        const track = document.querySelector('.logo-track');
+
+        track.addEventListener('mouseover', () => {
+            track.style.animationPlayState = 'paused';
+        });
+
+        track.addEventListener('mouseout', () => {
+            track.style.animationPlayState = 'running';
+        });
+    </script>  
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('open');
+            });
+        });
+
+    </script>  
+    <script>
+        function sendMessage() {
+            const messageInput = document.querySelector('.message-input');
+            const message = messageInput.value;
+            const phoneNumber = '+919656556070';
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+            const button = document.querySelector('.whatsapp-button');
+            button.classList.add('animate');
+    
+            button.addEventListener('transitionend', function() {
+                window.open(whatsappUrl, '_blank');
+            }, { once: true });
+        }
+    </script> 
+    <script>
+        let selectedCourse = '';
+
+        function openModal(courseName) {
+            selectedCourse = courseName;
+            document.getElementById('courseName').value = courseName; 
+            document.getElementById('enrollmentModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('enrollmentModal').style.display = 'none';
+        }
+
+        document.getElementById('enrollmentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+ 
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+
+            if (!firstName || !lastName || !email || !phone) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            var message = `I am interested in *${selectedCourse}* . Here are my details:\n\n` +
+                        `First Name: *${firstName}*\n` +
+                        `Last Name: *${lastName}*\n` +
+                        `Email: *${email}*\n` +
+                        `Phone Number: *${phone}*\n\n` +
+                        `Kindly do the needful.`;
+
+            var whatsappURL = `https://wa.me/+919656556070?text=${encodeURIComponent(message)}`;
+
+            window.open(whatsappURL, '_blank');
+
+            closeModal();
+        });
+    </script>
+    <script>
+        function makeCall() {
+            window.location.href = 'tel:+919656556070'; 
+        }
+    </script>
+    <script>
+        function adjustLogoSize() {
+            var logo = document.getElementById('logo');
+            if (window.innerWidth <= 768) {
+                logo.style.height = '40px';
+            } else {
+                logo.style.height = '50px';
+            }
+        }
+        window.addEventListener('resize', adjustLogoSize);
+        window.addEventListener('load', adjustLogoSize);
+    </script>
+</body>
+
+</html>
