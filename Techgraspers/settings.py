@@ -142,3 +142,6 @@ CSRF_TRUSTED_ORIGINS = [
     'http://techgraspers.com',
     'https://www.techgraspers.com',
 ]
+
+FILE_UPLOAD_MAX_MEMORY_SIZE = 26214400
+DATA_UPLOAD_MAX_MEMORY_SIZE = 26214400
