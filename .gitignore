@@ -52,8 +52,8 @@ nosetests.xml
 pylint.report
 
 # Ignore static and media files
-/static/
-/media/
+# /static/
+# /media/
 
 # Ignore pipenv files
 Pipfile.lock
