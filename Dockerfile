@@ -23,5 +23,5 @@ EXPOSE 3001
 # display the contents of the current directory  
 RUN ls -al
 # Run the command to start Gunicorn
-CMD ['waitress-serve', '--port=3001', 'Techgraspers.wsgi:application'] 
+CMD ["gunicorn", "--chdir", "/app", "Techgraspers.wsgi:application", "--bind", "0.0.0.0:3001", "--workers", "3"]
 
