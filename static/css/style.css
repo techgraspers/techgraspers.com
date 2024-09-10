@@ -1,16 +1,22 @@
-/********** Template CSS **********/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 /* Apply Inter font globally */
-body, .btn, .navbar, .nav-link, h1, h2, h3, h4, h5, h6, p {
-    font-family: "Inter", sans-serif !important;
+body, .btn, .navbar, .nav-link, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif !important;
 }
 
 /* Optionally, override specific elements if needed */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Inter", sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
 }
 
 .btn {
-    font-family: "Inter", sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 .arrow-color {
@@ -102,11 +108,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /*** Navbar ***/
 .navbar-top {
-    background-color: #2C3532;
+    background-color: #0b1c42;
 }
+
 .navbar-bottom {
-    background-color: #126366;
+    position: absolute;
+    width: 100%;
+    z-index: 900;
+    background: linear-gradient(to bottom, #140b42, rgba(12, 123, 192, 0));
 }
+
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
@@ -134,10 +145,10 @@ h1, h2, h3, h4, h5, h6 {
     .navbar-light .navbar-nav .nav-link  {
         margin-right: 0;
         padding: 10px 0;
+        background: #140b42 !important;
     }
-
-    .navbar-light .navbar-nav {
-        border-top: 1px solid #EEEEEE;
+    .navbar-collapse {
+        background:#140b42;
     }
 }
 
@@ -151,9 +162,9 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
 }
 .navbar-nav img {
-    width: 80%;
-    padding-top : 6px;
-    padding-bottom: 6px;
+    width: 60%;
+    padding-top : 10px;
+    padding-bottom: 10px;
 }
 .navbar-light.sticky-top {
     top: -100px;
@@ -178,7 +189,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .ghost-btn:hover {
-    background-color: #0d484a;
+    background-color: #0b1442;
     color: white;
 }
 
@@ -208,42 +219,64 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /*** Header carousel ***/
-@media (max-width: 768px) {
-    .header-carousel .owl-carousel-item {
-        position: relative;
-        min-height: 500px;
-    }
-    
-    .header-carousel .owl-carousel-item img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+.header-carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+}
+
+.header-carousel .owl-carousel-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.owl-carousel {
+    transition: margin-top 0.3s ease;
+}
+
+.header-carousel .owl-carousel-item video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Video is in the background */
+    pointer-events: none; /* Prevent video from blocking clicks */
+}
+
+.header-carousel .position-absolute {
+    z-index: 2; /* Ensure content is above the video */
+}
+
+.header-carousel .col-sm-10.col-lg-8 {
+    position: relative;
+    z-index: 3; /* Ensure the text and buttons are clickable */
 }
 
 .header-carousel .owl-nav {
     position: absolute;
-    top: 50%;
-    right: 8%;
-    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3; /* Nav controls should be above all content */
 }
-@media (max-width: 768px) {
-.header-carousel .owl-nav{
-    display: none;
-}
-}
+
 .header-carousel .owl-nav .owl-prev,
 .header-carousel .owl-nav .owl-next {
-    margin: 7px 0;
+    margin: 0;
     width: 45px;
     height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50px;
+    border-radius: 50%;
     color: #FFFFFF;
     background: transparent;
     border: 1px solid #FFFFFF;
@@ -256,13 +289,17 @@ h1, h2, h3, h4, h5, h6 {
     background: white;
     color: #0d484a;
 }
+
+@media (max-width: 768px) {
+    .header-carousel .owl-nav {
+        display: none;
+    }
+}
+
 .page-header-inner {
     background: rgba(15, 23, 43, .7);
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
-    color: var(--light);
-}
 
 
 /*** Section Title ***/
@@ -337,17 +374,17 @@ h1, h2, h3, h4, h5, h6 {
 
 /*** Service ***/
 .service-item {
-    background: #D2E6E4;
+    background: #F0FBFC;
     transition: .5s;
     border-top-left-radius: 50px;
     /* border-bottom-right-radius: 50px; */
     overflow: hidden;
-    color:#126366 ;
+    color:#283343 ;
 }
 
 .service-item:hover {
     margin-top: -10px;
-    background: #126366;
+    background: #283343;
 }
 
 .service-item * {
@@ -381,25 +418,29 @@ h1, h2, h3, h4, h5, h6 {
     height: 55px;
 }
 .ghost-btn-about a{
-    color: #0d484a;
+    color: #0b1442;
 }
 @media (min-width: 768px) {
     .ghost-btn-about {
     }
 }
 .ghost-btn-about:hover {
-    background-color: #0d484a;
+    background-color: #0b1442;
     color: white !important;
 }
 .ghost-btn-about:hover a {
     color: white !important;
 }
+
+
 /*** Categories & Courses ***/
 .course-bg {
-    background: #0d484a;
+    background: #263f65;
+    width: 100vw;
 }
 .course-card{
     border-radius: 25px;
+    height: 640px;
 }
 .course-card-image{
     border-top-left-radius: 25px;
@@ -418,7 +459,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #0d484a;
+    background: #263f65;
     padding: 4px;
     border-radius: 25px;
     color:white;
@@ -429,13 +470,13 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 .btn-course:hover{
-    background: #093233;
+    background: #092349;
 }
 .ghost-btn-course{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #093132;
+    background: #092349;
     padding: 4px;
     border-radius: 25px;
     color:white;
@@ -444,7 +485,11 @@ h1, h2, h3, h4, h5, h6 {
     color:white;
 }
 .ghost-btn-course:hover{
-    background: #0d484a;
+    background: #263f65;
+}
+.button-container {
+    margin-top: auto;
+    padding: 0 20px 20px;
 }
 
 /*** Team ***/
