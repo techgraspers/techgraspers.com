@@ -14,6 +14,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
@@ -52,14 +53,14 @@
                     <a href="index.html"><img src="{% static 'img/icons/icons8-telegram-100 1.png' %}" alt=""></a>
                     <a href="index.html" style="width: 20% !important;"><img src="{% static 'img/icons/icons8-youtube-100 2.png' %}" alt=""></a>
                     <a href="index.html"><img src="{% static 'img/icons/icons8-instagram-100 2.png' %}" alt=""></a>
-                    <a href="index.html" style="margin-right:30px;"><img src="{% static 'img/icons/icons8-facebook-100 2.png' %}" alt=""></a>
+                    <a href="https://www.facebook.com/profile.php?id=61565912933115" target="_blank" style="margin-right:30px;"><img src="{% static 'img/icons/icons8-facebook-100 2.png' %}" alt=""></a>
                 </div>
             </div>
         </nav>
     </div>
     <div class="navbar-bottom">
         <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0 py-4">
-            <a href="index.html" class="navbar d-flex align-items-center px-4 px-lg-5">
+            <a href="../" class="navbar d-flex align-items-center px-4 px-lg-5">
                 <img id="logo" src="{% static 'img/Logo.png' %}" alt="Tech-Graspers Logo" class="navbar-logo" style="height: 50px;">
             </a>            
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="background:#ffffff43;">
@@ -87,14 +88,14 @@
                     <source src="{% static 'video/courosal 01.mp4' %}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(20, 11, 66, 0.5); z-index: 2;">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center overlay">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
                                 <h1 class="display-3 text-white animated slideInDown">Master Software Testing Online</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Learn industry-standard testing skills from home. Fast, focused, and effective.</p>
-                                <a href="" class="btn ghost-btn-hero py-md-3 px-md-5 me-3 animated slideInLeft">KNOW MORE</a>
-                                <a href="" class="btn filled-btn py-md-3 px-md-5 animated slideInRight">JOIN NOW</a>
+                                <a href="../about" class="btn ghost-btn-hero py-md-3 px-md-5 me-3 animated slideInLeft">KNOW MORE</a>
+                                <a onclick="openModal('Joining with Techgraspers')" class="btn filled-btn py-md-3 px-md-5 animated slideInRight">JOIN NOW</a>
                             </div>
                         </div>
                     </div>
@@ -106,21 +107,21 @@
                     <source src="{% static 'video/courosal 02.mp4' %}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(20, 11, 66, 0.5); z-index: 2;">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center overlay">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
                                 <h1 class="display-3 text-white animated slideInDown">Learn Testing from the Experts</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Get hands-on training in software testing. Build a strong foundation today.</p>
-                                <a href="" class="btn ghost-btn-hero py-md-3 px-md-5 me-3 animated slideInLeft">KNOW MORE</a>
-                                <a href="" class="btn filled-btn py-md-3 px-md-5 animated slideInRight">JOIN NOW</a>
+                                <a href="../about" class="btn ghost-btn-hero py-md-3 px-md-5 me-3 animated slideInLeft">KNOW MORE</a>
+                                <a onclick="openModal('Joining with Techgraspers')" class="btn filled-btn py-md-3 px-md-5 animated slideInRight">JOIN NOW</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>        
-    </div>
+        </div>
+    </div>       
     <!-- Carousel End -->
 
 
@@ -221,155 +222,49 @@
                 <h1 class="mb-5 text-white">Popular Courses</h1>
             </div>
             <div class="row g-4 justify-content-center">
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Course-01.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">IT Career - Reboot Program </h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">Personalized one-on-one counseling for tailored software testing training, focused on experienced IT professionals.</h6>
-                            <div class="d-flex flex-column align-items-center mb-4">
-                                <div class="btn-course px-4">
-                                    <a href="course01" class="px-2 py-2 m-1">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4">
-                                    <a class="px-2 m-1" onclick="openModal('IT Career Reboot Program')">GET A FREE DEMO</a>
-                                </div>
-                            </div>                            
+                {% for details in courseDetailsSection %}
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-card course-item">
+                        <div class="custom-card card">
+                            <img src="{{details.image.url}}" class="img-fluid" alt="Card image">
+                            <div class="card-body text-center">
+                                <h5>{{details.title}}</h5>
+                                <p>{{details.description}}</p>
+                                <a href="{{details.page_link}}" class="custom-btn">LEARN MORE</a>
+                                <a class="custom-link" onclick="openModal('{{details.button_link}}')" style="color: #0b1442;">Get A Free Demo -></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Course-02.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">Selenium With TestNG and POM</h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">Elevate your software testing skills with our specialized training in Selenium with TestNG and
-                                the Page Object Model (POM).</h6>
-                            <div class="d-flex flex-column align-items-center mb-4">
-                                <div class="btn-course px-4">
-                                    <a href="course02" class="px-2 py-2 m-1">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4 ">
-                                    <a class="px-2 m-1" onclick="openModal('Selenium With TestNG and POM')">GET A FREE DEMO</a>
-                                </div>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Course-04.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">Mobile Application Automation Using Appium</h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">Master Appium, the essential open-source tool for automating tests across iOS, Android, and Windows, to excel in mobile app testing.</h6>
-                            <div class="d-flex flex-column align-items-center mb-4">
-                                <div class="btn-course px-4">
-                                    <a href="course03" class="px-2 py-2 m-1">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4 ">
-                                    <a class="px-2 m-1" onclick="openModal('Mobile Application Automation Using Appium')">GET A FREE DEMO</a>
-                                </div>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Course-05.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">Automation Testing Using Cucumber and BDD</h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">Cucumber BDD revolutionizes software testing by bridging the
-                                gap between technical and non-technical stakeholders.</h6>
-                            <div class="d-flex flex-column align-items-center mb-4">
-                                <div class="btn-course px-4">
-                                    <a href="course04" class="px-2 py-2 m-1">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4">
-                                    <a class="px-2 m-1" onclick="openModal('Automation Testing Using Cucumber and BDD')">GET A FREE DEMO</a>
-                                </div>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Course-06.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">API Automation Using RestAssured</h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">Discover the power of RestAssured for API automation and transform your testing approach.</h6>
-                            <div class="d-flex flex-column align-items-center mb-4">
-                                <div class="btn-course px-4">
-                                    <a href="course05" class="px-2 py-2 m-1">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4 ">
-                                    <a class="px-2 m-1" onclick="openModal('API Automation Using RestAssured')">GET A FREE DEMO</a>
-                                </div>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Course-07.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">All-Inclusive Software Testing Training Program</h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">Launch Your IT Career even if you have a non-IT background, with Our All-Inclusive Software Testing Training Program</h6>
-                            <div class="d-flex flex-column align-items-center mb-4">
-                                <div class="btn-course px-4">
-                                    <a href="course06" class="px-2 py-2 m-1">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4 ">
-                                    <a class="px-2 m-1" onclick="openModal('All-Inclusive Software Testing Training Program')">GET A FREE DEMO</a>
-                                </div>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-
-                <div id="enrollmentModal" class="modal" style="z-index: 100;">
-                    <div class="modal-content">
-                        <span class="close" onclick="closeModal()">&times;</span>
-                        
-                        <form id="enrollmentForm">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" required>
+                {% endfor %}
+            </div>
     
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" required>
+            <!-- Modal -->
+            <div id="enrollmentModal" class="modal" style="z-index: 100;">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
     
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                    <form id="enrollmentForm">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
     
-                            <label for="phone">Phone Number</label>
-                            <input type="text" id="phone" name="phone" required>
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
     
-                            <input type="hidden" id="courseName" name="courseName">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
     
-                            <button type="submit" class="submit-btn">Submit</button>
-                        </form>
-                    </div>
+                        <label for="phone">Phone Number</label>
+                        <input type="text" id="phone" name="phone" required>
+    
+                        <input type="hidden" id="courseName" name="courseName">
+    
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
     <!-- Courses End -->
 
     <!-- Top Services -->
@@ -379,166 +274,58 @@
                 <h1 class="mb-5 text-white">Our Top Services</h1>
             </div>
             <div class="row g-4 justify-content-center">
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Service-05.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">Web Application Development</h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">At TechGraspers, we create high-performance, secure web applications that captivate users and set you apart in the digital world.</h6>
-                            <div class="d-flex flex-column align-items-center mb-4 button-container">
-                                <div class="ghost-btn-course mb-2">
-                                    <a class="px-2 m-1" data-bs-target="#webapp" href="#" data-bs-toggle="modal">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4">
-                                    <a class="px-2 m-1" onclick="openModal('Web Application Development')">GET A QUOTE</a>
-                                </div>
-                            </div>                         
+                {% for service in serviceDetailsSection %}
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-card course-item">
+                        <div class="custom-card card" style="height:650px !important;">
+                            {% if service.image %}
+                            <img src="{{service.image.url}}" class="img-fluid" alt="Card image">
+                            {% endif %}
+                            <div class="card-body text-center">
+                                {% if service.title %}
+                                <h5>{{service.title}}</h5>
+                                {% endif %}
+                                {% if service.description %}
+                                <p>{{service.description}}</p>
+                                {% endif %}
+                                {% if service.popup_link %}
+                                <a data-bs-target="#{{service.popup_link}}" data-bs-toggle="modal" class="custom-btn">LEARN MORE</a>
+                                {% endif %}
+                                {% if service.button_link %}
+                                <a class="custom-link" onclick="openModal('{{service.button_link}}')" style="color: #0b1442;">GET A QUOTE -></a>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="webapp" tabindex="-1" aria-labelledby="webappModalLabel" aria-hidden="true" style="z-index:100;">
+            
+                {% if service.popup_link %}
+                <div class="modal fade" id="{{service.popup_link}}" tabindex="-1" aria-labelledby="qaandstModalLabel" aria-hidden="true" style="z-index:100;">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title" id="webappModalLabel">Web Application Development</h4>
+                                {% if service.heading %}
+                                <h4 class="modal-title" id="qaandstModalLabel">{{service.heading}}</h4>
+                                {% endif %}
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p>At TechGraspers, we transform your vision into reality with our
-                                expertise in Web Application Development. Our team leverages
-                                cutting-edge technologies to craft sophisticated, high-performance
-                                web applications that captivate and engage users.
-                                We deliver seamless, interactive solutions tailored to your unique
-                                business needs, ensuring a secure and scalable experience that sets
-                                you apart in the digital world.
-                                </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Service-06.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">iOS and Android Application Development</h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">At TechGraspers, we craft innovative iOS and Android apps that enhance user experiences, drive engagement, and achieve business goals.</h6>
-                            <div class="d-flex flex-column align-items-center mb-4 button-container">
-                                <div class="ghost-btn-course mb-2">
-                                    <a class="px-2 m-1" data-bs-target="#ios" href="#" data-bs-toggle="modal">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4">
-                                    <a class="px-2 m-1" onclick="openModal('iOS and Android Application Development')">GET A QUOTE</a>
-                                </div>
-                            </div>                         
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="ios" tabindex="-1" aria-labelledby="iosModalLabel" aria-hidden="true" style="z-index:100;">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="iosModalLabel">iOS and Android Application Development</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>At TechGraspers, we specialize in developing cutting-edge iOS and Android apps that enhance user experiences and drive engagement. Our team blends the latest technology with creative design to deliver sleek, high-performance applications that stand out in app stores. In today’s digital world, we help businesses boost connectivity, deliver personalized experiences, and achieve their goals.
-                                </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Service-07.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">App Maintenance and Tech Support</h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">We keep your apps running smoothly and ahead of the curve with expert maintenance and tech support, including updates, bug fixes, and proactive troubleshooting.</h6>
-                            <div class="d-flex flex-column align-items-center mb-4 button-container">
-                                <div class="ghost-btn-course mb-2">
-                                    <a class="px-2 m-1" data-bs-target="#appmaintanance" href="#" data-bs-toggle="modal">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4">
-                                    <a class="px-2 m-1" onclick="openModal('App Maintenance and Tech Support')">GET A QUOTE</a>
-                                </div>
-                            </div>                         
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="appmaintanance" tabindex="-1" aria-labelledby="appmaintananceModalLabel" aria-hidden="true" style="z-index:100;">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="appmaintananceModalLabel">App Maintenance and Tech Support</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>We ensure your applications run smoothly and stay ahead of the
-                                    curve with our comprehensive App Maintenance and Tech
-                                    Support services. From routine updates and bug fixes to
-                                    proactive support and troubleshooting, our dedicated team is
-                                    here to keep your software in top shape. We provide timely,
-                                    expert assistance to resolve issues quickly, ensuring optimal
-                                    performance and uninterrupted user experiences.
-                                </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Service-08.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">Quality assurance and Software Testing</h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">At TechGraspers, we ensure flawless software performance with expert QA and testing, using automation tools like Selenium and Playwright and skills in Java, Python, C#, and JavaScript.
-                            </h6>
-                            <div class="d-flex flex-column align-items-center mb-4 button-container">
-                                <div class="ghost-btn-course mb-2">
-                                    <a class="px-2 m-1" data-bs-target="#qaandst" href="#" data-bs-toggle="modal">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4">
-                                    <a class="px-2 m-1" onclick="openModal('Quality assurance and Software Testing')">GET A QUOTE</a>
-                                </div>
-                            </div>                         
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="qaandst" tabindex="-1" aria-labelledby="qaandstModalLabel" aria-hidden="true" style="z-index:100;">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="qaandstModalLabel">Quality Assurance and Software Testing</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>
-                                    At TechGraspers, we elevate your software to new heights with our premier Quality Assurance and Software Testing. Our dedicated team meticulously checks every functionality and requirement to ensure flawless performance, unmatched reliability, and a perfect user experience. We don’t just find bugs; we refine and perfect, transforming every challenge into an opportunity to deliver software that not only meets but surpasses your highest standards. At TechGraspers, we revolutionize testing strategy with state-of-the-art automation frameworks tailored for peak performance. Our expertise spans leading tools like Selenium, Playwright, and Cypress, combined with advanced programming language skills in Java, Python, C#, and JavaScript, to deliver robust and efficient solutions.
-                                </p>
-                                <h5>Our Services Include</h5>
+                                {% if service.description_popup %}
+                                <p>{{service.description_popup}}</p>
+                                {% endif %}
+                                {% if service.second_heading %}
+                                <h5>{{service.second_heading}}</h5>
+                                {% endif %}
                                 <ul>
-                                    <li><b>Manual Testing:</b> Comprehensive, detail-oriented assessment to ensure quality.</li>
-                                    <li><b>Software Automation Testing:</b> Cutting-edge automation that enhances speed and accuracy.</li>
-                                    <li><b>Performance Testing:</b> Rigorous evaluation to ensure your software is the best in any situation.</li>
+                                    {% if service.list_01 %}
+                                    <li><b>{{service.list_01}}:</b>{{service.list_01_desc}}</li>
+                                    {% endif %}
+                                    {% if service.list_02 %}
+                                    <li><b>{{service.list_02}}:</b>{{service.list_02_desc}}</li>
+                                    {% endif %}
+                                    {% if service.list_03 %}
+                                    <li><b>{{service.list_03}}:</b>{{service.list_03_desc}}</li>
+                                    {% endif %}
                                 </ul>
                             </div>
                             <div class="modal-footer">
@@ -546,160 +333,10 @@
                             </div>
                         </div>
                     </div>
-                </div> 
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Service-01.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">Discover Opportunities with the Techgraspers Student Network</h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">Leverage our TechGraspers student community to explore job opportunities and connect with tech professionals across various companies.</h6>
-                            <div class="d-flex flex-column align-items-center mb-4 button-container">
-                                <div class="ghost-btn-course mb-2">
-                                    <a class="px-2 m-1" data-bs-target="#appmaintanance" href="#" data-bs-toggle="modal">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4">
-                                    <a class="px-2 m-1" onclick="openModal('Connecting and Discovering Opportunities with the Techgraspers Student Network')">GET A QUOTE</a>
-                                </div>
-                            </div>                            
-                        </div>
-                    </div>
                 </div>
-                <div class="modal fade" id="network" tabindex="-1" aria-labelledby="networkModalLabel" aria-hidden="true" style="z-index:100;">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="networkModalLabel">Discover Opportunities with the Techgraspers Student Network</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Leverage our extensive Techgraspers student community to explore and exchange
-                                    exciting job opportunities. Join a vibrant network of tech professionals and unlock new
-                                    career paths through valuable connections and collaborative support. Our students are spread across a wide range of companies.
-                                </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Service-02.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">Sharpen Your Skills with Mock Interviews with Industry Professionals</h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">Boost your job search confidence with mock interviews and expert feedback. </h6>
-                            <div class="d-flex flex-column align-items-center mb-4 button-container">
-                                <div class="ghost-btn-course mb-2">
-                                    <a class="px-2 m-1" data-bs-target="#interview" href="#" data-bs-toggle="modal">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4">
-                                    <a class="px-2 m-1" onclick="openModal('Sharpening My Skills with Mock Interviews with Industry Professionals')">GET A QUOTE</a>
-                                </div>
-                            </div>                           
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="interview" tabindex="-1" aria-labelledby="interviewModalLabel" aria-hidden="true" style="z-index:100;">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="interviewModalLabel">Sharpen Your Skills with Mock Interviews with Industry Professionals</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Gain valuable insights and improve your performance by practicing mock interviews with
-                                    experienced professionals in the industry. Receive real-world feedback, refine your techniques etc...
-                                    That makes you build confidence to excel in your job searches across any companies.
-                                </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Service-03.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">Enhance Your Resume and LinkedIn Profile with Expert Guidance</h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">Optimize your resume and LinkedIn profile with our experts’ personalized advice to highlight your skills and align with industry trends, ensuring a lasting impression on employers.</h6>
-                            <div class="d-flex flex-column align-items-center mb-4 button-container">
-                                <div class="ghost-btn-course mb-2">
-                                    <a class="px-2 m-1" data-bs-target="#resume" href="#" data-bs-toggle="modal">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4">
-                                    <a class="px-2 m-1" onclick="openModal('Enhancing My Resume and LinkedIn Profile with Expert Guidance')">GET A QUOTE</a>
-                                </div>
-                            </div>                         
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="resume" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true" style="z-index:100;">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="resumeModalLabel">Enhance Your Resume and LinkedIn Profile with Expert Guidance</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Stand out from the competition by optimizing your resume and LinkedIn profile with the help of our professionals. Receive personalized advice and improvements to showcase your skills and achievements effectively, and make a lasting impression on potential employers. Our experts will also provide strategic insights to ensure your profile aligns with industry trends.
-                                </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-card col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card course-item bg-light">
-                        <div class="position-relative overflow-hidden course-card-image">
-                            <img class="img-fluid" src="{% static 'img/Service-04.jpg' %}" alt="">
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">Dedicated Placement Program Connects You with Diverse Careers</h3>
-                            <div class="mb-3"></div>
-                            <h6 class="mb-4">Get tailored support and explore diverse career options with our dedicated placement assistance program.</h6>
-                            <div class="d-flex flex-column align-items-center mb-4 button-container">
-                                <div class="ghost-btn-course mb-2">
-                                    <a class="px-2 m-1" data-bs-target="#placement" href="#" data-bs-toggle="modal">LEARN MORE</a>
-                                </div>
-                                <div class="ghost-btn-course mb-4">
-                                    <a class="px-2 m-1" onclick="openModal('Your Dedicated Placement Assistance Program Connecting Me with Diverse Career Opportunities')">GET A QUOTE</a>
-                                </div>
-                            </div>                         
-                        </div>
-                    </div>
-                </div> 
-                <div class="modal fade" id="placement" tabindex="-1" aria-labelledby="placementModalLabel" aria-hidden="true" style="z-index:100;">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="placementModalLabel">Dedicated Placement Program Connects You with Diverse Careers</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Stand out from the competition by optimizing your resume and LinkedIn profile with the help of our professionals. Receive personalized advice and improvements to showcase your skills and achievements effectively, and make a lasting impression on potential employers. Our experts will also provide strategic insights to ensure your profile aligns with industry trends.
-                                </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>                            
-            </div>
+                {% endif %}
+                {% endfor %}
+            </div>            
         </div>
     </div>
 
@@ -707,28 +344,30 @@
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
-                <h1 class="mb-5" style="color: #126366; font-weight: bold;">What Our Students Say</h1>
+                <h1 class="mb-5" style="color: #0b1442; font-weight: bold;">What Our Students Say</h1>
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
                 {% for testimonial in testimonialSection %}
                 <div class="testimonial-item text-center">
                     <img class="testi-image p-2 mx-auto mb-3" src="{{testimonial.avatar.url}}" style="width: 120px; height: 120px;">
-                    <h5 class="mb-0" style="color: #126366; font-weight: bold;">{{testimonial.name}}</h5>
+                    <h5 class="mb-0" style="color: #0b1442; font-weight: bold;">{{testimonial.name}}</h5>
                     <p style="color: #D9AE8B; font-weight: bold;">{{testimonial.profession}}</p>
                     <div class="testimonial-text bg-light text-center p-4">
                         <p class="mb-2">{{testimonial.comment}} </p>
-                        <div style="display: flex; justify-content: center; align-items: center;">
-                            <a href="{{testimonial.youtube}}" target="_blank" class="mb-0" style="color: #ffffff; font-weight: bold; text-decoration: none; display: flex; align-items: center;">
-                                <img src="{% static 'img/icons/icons8-youtube-100 2.png' %}" alt="" style="width: 20%; margin-right: 10px;">
-                                I have More to Say
-                            </a>
-                        </div>                    
+                        {% if testimonial.youtube %}
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <a href="{{testimonial.youtube}}" target="_blank" class="mb-0" style="color: #ffffff; font-weight: bold; text-decoration: none; display: flex; align-items: center;">
+                                    <img src="{% static 'img/icons/icons8-youtube-100 2.png' %}" alt="" style="width: 20%; margin-right: 10px;">
+                                    I have More to Say
+                                </a>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
-    </div>
+    </div>    
     <!-- Testimonial End -->
 
     <!-- YouTube Ad -->
@@ -747,13 +386,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <h1 class="mb-4" style="color: #126366; font-weight: bold;">Welcome to Tech-Graspers</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <h1 class="mb-4" style="color: #0b1442; font-weight: bold;">Follow us on YouTube</h1>
+                    <p class="mb-4">At Tech Graspers, we are committed to providing top-notch software testing and development education. Our YouTube channel, Eliza&Joe, offers a wealth of tutorials, insights, and tips to help you enhance your skills and stay ahead in the industry.</p>
+                    <p class="mb-4">Join our community on YouTube to access valuable content including detailed walkthroughs, live coding sessions, and expert interviews. Stay updated with the latest trends and techniques in software testing and development to keep your knowledge sharp and relevant.</p>
                     <div class="btn ghost-btn-ad" style="margin-top: 50px;">
-                        <a class="" href="#">Watch on Youtube</a>
+                        <a class="" href="https://youtu.be/kKWwFLHsZdw?si=QHjbWme1BHznJYZC" style="color: #0b1442; font-weight: bold;" target="_blank">Watch on YouTube</a>
                     </div>
-                </div>
+                </div>                
             </div>
         </div>
     </div>    
@@ -782,7 +421,7 @@
     <!-- FAQ -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s" id="faq_section">
         <div class="faq-container">
-            <h1 class="mb-4" style="color: #126366; font-weight: bold;">Frequently Asked Questions</h1>
+            <h1 class="mb-4" style="color: #0b1c42; font-weight: bold;">Frequently Asked Questions</h1>
             {% for faq in faqsection %}
             <div class="faq-item">
                 <div class="faq-question">
@@ -803,7 +442,7 @@
 
     <!-- Privacy Policy & Terms and Conditions -->
     <!-- Privacy Policy Modal -->
-    <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+    <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true" style="z-index: 100;">
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -811,7 +450,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <p>This is the privacy policy content.</p>
+            <p>Our Privacy Policy is under creation. It will be updated soon.</p>
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -821,7 +460,7 @@
     </div>
     
     <!-- Terms and Conditions Modal -->
-    <div class="modal fade" id="termsConditionsModal" tabindex="-1" aria-labelledby="termsConditionsModalLabel" aria-hidden="true">
+    <div class="modal fade" id="termsConditionsModal" tabindex="-1" aria-labelledby="termsConditionsModalLabel" aria-hidden="true" style="z-index: 100;">
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -875,10 +514,92 @@
                     course fee.
                 </li>
             </ul>
-            <p>
+            <p><i>
                 Please note that all cancellations will incur a 5% deduction from the refunded amount to cover
                 transactional costs. This deduction does not include any transactional fees incurred by the
                 customer during the initial online payment
+            </i></p>
+            <h5><i>Data Transfer</i></h5>
+            <p><i>
+                Your information might be transferred to and stored on computers situated outside of
+                your jurisdiction. By choosing to use our service, you are expressly agreeing to these
+                transfers.
+            </i></p>
+            <h5><i>Disclosure Of Personal Data To Third Parties</i></h5>
+            <p><i>
+                Personal information provided through the site may be used and disclosed to other entities and
+                business partners as part of operating the Techgraspers site, including for delivering requested
+                products and services as well as for marketing and promotional purposes. Techgrapsers will not
+                sell, rent, or lease individually identifiable information to others without your consent. Unless
+                authorized by you or required by law, we will only share your personal data with other
+                techgraspers entities and/or business partners acting on our behalf to assist in providing our
+                products and services.
+            </i></p>
+            <p><i>
+                Any personal information you submit for public posting, such as testimonials and comments,
+                may be visible to Techgraspers, its affiliates, licensors, visitors, and customers. Identifiable and
+                non-identifiable visitor information may be disclosed or distributed to another party in connection
+                with corporate transactions, such as mergers, consolidations, acquisitions, or asset purchases,
+                or to comply with legal processes such as subpoenas or court orders. Additionally, such
+                information may be shared if deemed necessary by Techgraspers to protect the life, health, or
+                property of Techgraspers or others.
+            </i></p>
+            <p><i>
+                While we strive to ensure that third parties with whom we share or disclose personal data are
+                contractually obligated to use the data solely for the intended purposes, these third parties are
+                independent entities over which Techgraspers has no control. Techgraspers is not responsible
+                or liable for the actions, omissions, or data handling practices of these third parties.
+            </i></p>
+            <h5><i>Business Transactions:</i></h5>
+            <p><i>
+                If the techgraspers engages in a merger, acquisition, or asset sale, your personal data
+                may be transferred.
+            </i></p>
+            <h5><i>Law Enforcement:</i></h5>
+            <p><i>
+                Under specific circumstances, techgraspers may share your personal data as mandated
+                by law or in response to legitimate requests from public authorities.
+            </i></p>
+            <h5><i>Other Legal Requirements:</i></h5>
+            <p>
+                Techgraspers may disclose your personal data in the sincere belief that such action is
+                essential to:
+            </p>
+            <p>
+                Comply with a legal obligation
+            </p>
+            <ul>
+                <li>
+                    Safeguard and uphold the rights or property of the Techgraspers
+                </li>
+                <li>
+                    Proactively identify and investigate potential misconduct related to the service.
+                </li>
+                <li>
+                    Ensure the personal safety of users or the general public.
+                </li>
+                <li>
+                    Mitigate legal liability and protect against potential legal challenges.
+                </li>
+            </ul>
+            <h5>Children's Privacy</h5>
+            <p>
+                Our services are not intended for individuals under the age of 13. If you believe that
+                your child has provided us with personal data, please contact us at support@techgraspers.com
+            </p>
+            <h5>External Links</h5>
+            <p>
+                Our service may contain links to other websites not operated by us. We have no control
+                over and assume no responsibility for their content and privacy policies.
+            </p>
+            <h5>Policy Changes</h5>
+            <p>
+                We reserve the right to periodically revise our privacy policy. Any modifications will be
+                communicated to you through email and/or prominently displayed on our service.
+            </p>
+            <h5>Contact Us</h5>
+            <p>
+                If you have questions about this Privacy Policy, contact us at info@techgraspers.com
             </p>
             </div>
             <div class="modal-footer">
@@ -888,64 +609,66 @@
         </div>
     </div>
   
-
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">LINKS</h4>
-                    <a class="btn btn-link" href="../about">ABOUT US</a>
-                    <a class="btn btn-link" href="../courses">COURSES</a>
-                    <a class="btn btn-link" href="../testimonial">TESTIMONIALS</a>
-                    <a class="btn btn-link" href="#faq_section">F.A.Q</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Company</h4>
-                    <a class="btn btn-link" href="">Support 24x7</a>
-                    <a class="btn btn-link" href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">Privacy Policy</a>
-                    <a class="btn btn-link" href="#" data-bs-toggle="modal" data-bs-target="#termsConditionsModal">Terms And Conditions</a>
-                    <a class="btn btn-link mb-4" href="">Contact Us</a>
-                    <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>219A, Near Shyna Residency, Kattappana - Kochuthovala Road, Kattappana, Idukki, PIN : 685508</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9656556070</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@techgraspers.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-telegram"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+        <div class="footer-background" style="background-image: url('{% static 'img/connection.png' %}');"></div>
+        <div class="footer-details">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-white mb-3">LINKS</h4>
+                        <a class="btn btn-link" href="../about">ABOUT US</a>
+                        <a class="btn btn-link" href="../courses">COURSES</a>
+                        <a class="btn btn-link" href="../testimonial">TESTIMONIALS</a>
+                        <a class="btn btn-link" href="#faq_section">F.A.Q</a>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Work With Us</h4>
-                    <a class="btn btn-link mb-4" onclick="openModal('Enrolling as a Mentor')">Become a Mentor</a>
-                    <h4 class="text-white mb-3">Still Confused?<br>We Are Ready To Talk</h4>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9656556070</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@techgraspers.com</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>career@techgraspers.com</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Send your first message to us</h4>
-                    <div class="form-container">
-                        <input type="text" class="form-control border-0 w-100 py-3 ps-4 message-input" placeholder="Type your message here" style="border-radius: 10px;">
-                        <button type="button" class="btn btn-whatsapp w-100 py-2 mt-3 whatsapp-button" onclick="sendMessage()" style="color: #ffffff;">
-                            <i class="fa fa-whatsapp"></i> Send to WhatsApp
-                            <i class="fa fa-paper-plane"></i>
-                        </button>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-white mb-3">Company</h4>
+                        <a class="btn btn-link" href="javascript:void(0)" onclick="makeCall()">Support 24x7</a>
+                        <a class="btn btn-link" href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">Privacy Policy</a>
+                        <a class="btn btn-link" href="#" data-bs-toggle="modal" data-bs-target="#termsConditionsModal">Terms And Conditions</a>
+                        <a class="btn btn-link mb-4" href="javascript:void(0)" onclick="makeCall()">Contact Us</a>
+                        <h4 class="text-white mb-3">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>219A, Near Shyna Residency, Kattappana - Kochuthovala Road, Kattappana, Idukki, PIN : 685508</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9656556070</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@techgraspers.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-telegram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61565912933115" target="_blank" class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
-                </div>                
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 text-center mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">techgraspers.com</a>, All Rights Reserved.
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-white mb-3">Work With Us</h4>
+                        <a class="btn btn-link mb-4" onclick="openModal('Enrolling as a Mentor')">Become a Mentor</a>
+                        <h4 class="text-white mb-3">Still Confused?<br>We Are Ready To Talk</h4>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9656556070</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@techgraspers.com</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>career@techgraspers.com</p>
                     </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-white mb-3">Can we have a chat? Send us your thoughs.</h4>
+                        <div class="form-container">
+                            <input type="text" class="form-control border-0 w-100 py-3 ps-4 message-input" placeholder="Type your message here" style="border-radius: 10px;">
+                            <button type="button" class="btn btn-whatsapp w-100 py-2 mt-3 whatsapp-button" onclick="sendMessage()" style="color: #ffffff;">
+                                <i class="fa fa-whatsapp"></i> Send to WhatsApp
+                                <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>                
                 </div>
             </div>
-        </div>        
+            <div class="container">
+                <div class="copyright">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 text-center mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="https://techgraspers.com/">techgraspers.com</a>, All Rights Reserved.
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>    
     </div>
     <!-- Footer End -->
 
@@ -966,7 +689,6 @@
     <script src="{% static 'js/main.js' %}"></script>
 
     <script>
-        
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -974,15 +696,14 @@
     
         var player;
         var videoStarted = false;
-
+    
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
                 height: '100%',
                 width: '100%',
-                videoId: 'kKWwFLHsZdw', //YouTube video ID
+                videoId: 'kKWwFLHsZdw', // YouTube video ID
                 playerVars: {
                     'autoplay': 0,
-                    'mute': 1,
                     'controls': 0,
                     'rel': 0,
                     'modestbranding': 1,
@@ -993,7 +714,7 @@
                 }
             });
         }
-
+    
         function onPlayerReady(event) {
             document.getElementById('playButton').addEventListener('click', function () {
                 if (player.getPlayerState() == YT.PlayerState.PLAYING) {
@@ -1010,13 +731,15 @@
                 var rect = videoSection.getBoundingClientRect();
                 var windowHeight = window.innerHeight;
     
+                // Check if video is in the viewport and hasn't started playing
                 if (!videoStarted && rect.top < windowHeight && rect.bottom >= 0) {
                     videoStarted = true;
                     player.playVideo();
                 }
             });
         }
-    </script>  
+    </script>
+    
     <script>
         const track = document.querySelector('.logo-track');
 
@@ -1108,7 +831,6 @@
         window.addEventListener('resize', adjustLogoSize);
         window.addEventListener('load', adjustLogoSize);
     </script>
-    
 </body>
 
 </html>
